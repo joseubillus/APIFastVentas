@@ -11,6 +11,10 @@ from typing import List
 #https://www.uvicorn.org/
 #https://fastapi.tiangolo.com/es/deployment/manually/#usa-el-comando-fastapi-run
 
+#python -m venv .venv
+#python -m pip install --upgrade pip
+#pip install "fastapi[standard]"
+
 # Configuración de la base de datos
 DATABASE_URL = "mysql+pymysql://root:@localhost:3306/bdapifast"
 engine = create_engine(DATABASE_URL)
@@ -102,3 +106,10 @@ def eliminar_producto(producto_id: str, db: Session = Depends(get_db)):
     db.delete(db_producto)
     db.commit()
     return {"mensaje": "Producto eliminado exitosamente"}
+
+
+# Ejecutar FastAPI con Uvicorn
+if __name__ == "__main__":
+    import uvicorn
+    #uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="192.168.18.4", port=8080)
