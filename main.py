@@ -3,6 +3,10 @@ from sqlalchemy import create_engine, Column, String, Float, Integer
 from sqlalchemy.orm import declarative_base, sessionmaker, Session
 from pydantic import BaseModel
 from typing import List
+#pip install PyMySQL
+#pip install uvicorn
+#uvicorn main:app
+#http://127.0.0.1:8000/docs
 
 # Configuración de la base de datos
 DATABASE_URL = "mysql+pymysql://root:@localhost:3306/bdapifast"
