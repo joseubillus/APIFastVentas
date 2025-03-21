@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS BDAPIFast;
 CREATE DATABASE BDAPIFast;
 
 USE BDAPIFast;
@@ -21,3 +22,18 @@ INSERT INTO producto (id, nom, pre, rang, Img) VALUES
 ('P008', 'Impresora Multifunción', 149.99, 3, 'https://example.com/impresora.jpg'),
 ('P009', 'Tablet 10"', 299.99, 4, 'https://example.com/tablet.jpg'),
 ('P010', 'Cámara Web HD', 39.99, 4, 'https://example.com/camara.jpg');
+
+SELECT * FROM producto;
+
+CREATE TABLE usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_usuario VARCHAR(50) NOT NULL,
+    contrasena VARCHAR(255) NOT NULL
+);
+
+INSERT INTO usuario (nombre_usuario, contrasena) VALUES
+('jose', '123'),
+('ana', '321'),
+('luis789', '123');
+
+SELECT * FROM usuario;
