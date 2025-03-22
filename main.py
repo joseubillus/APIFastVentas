@@ -7,9 +7,11 @@ from typing import List
 #pip install PyMySQL
 #pip install uvicorn
 #uvicorn main:app
+#uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 #http://127.0.0.1:8000/docs
 #https://www.uvicorn.org/
 #https://fastapi.tiangolo.com/es/deployment/manually/#usa-el-comando-fastapi-run
+#https://kinsta.com/es/blog/fastapi/
 
 #python -m venv .venv
 #python -m pip install --upgrade pip
@@ -54,6 +56,11 @@ def get_db():
 
 # Inicialización de FastAPI
 app = FastAPI()
+
+# Ruta GET
+@app.get("/")
+def read_root():
+    return {"message": "API funcionando"}
 
 # 🟢 Crear un producto
 @app.post("/producto/", response_model=ProductoSchema)
