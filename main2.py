@@ -161,4 +161,5 @@ def login(usuario: UsuarioSchema, db: Session = Depends(get_db)):
 if __name__ == "__main__":
     import uvicorn
     #uvicorn.run(app, host="127.0.0.1", port=8000)
-    uvicorn.run(app, host="172.56.0.238", port=8080)
+    #uvicorn.run(app, host="172.56.0.238", port=8080)
+    uvicorn.run(app, host="192.168.18.4", port=8080)
